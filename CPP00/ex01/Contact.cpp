@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 14:35:30 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/11/25 18:14:54 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/12/02 12:51:51 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ void Contact::setParameter(std::string const&str, std::string &parameter) {
 }
 
 void Contact::setContact(void) {
-	Contact::setParameter("< Type the first name of your contact >", fstName);
-	Contact::setParameter("< Type the last name of your contact >", lstName);
-	Contact::setParameter("< Type the nickname of your contact >", nickname);
-	Contact::setParameter("< Type the phone number of your contact >", phoneNbr);
-	Contact::setParameter("< Type your contact's darkest secret >", darkScret);
+	Contact::setParameter("\e[1;33m< Type the \e[0mfirst name \e[1;33mof your contact >\e[0m", fstName);
+	Contact::setParameter("\e[1;33m< Type the \e[0mlast name\e[1;33m of your contact >\e[0m", lstName);
+	Contact::setParameter("\e[1;33m< Type the \e[0mnickname \e[1;33mof your contact >\e[0m", nickname);
+	Contact::setParameter("\e[1;33m< Type the \e[0mphone number \e[1;33mof your contact >\e[0m", phoneNbr);
+	Contact::setParameter("\e[1;33m< Type your contact's \e[0mdarkest secret \e[1;33m>\e[0m", darkScret);
 	cStatus = 1;
 }
