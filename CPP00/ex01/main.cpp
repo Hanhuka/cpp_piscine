@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 14:45:36 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/12/02 12:50:02 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/12/05 16:00:37 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,13 @@ int main() {
 	// screenClean();
 	while (1)
 	{
+		if (!std::cin)
+			return (0);
 		screenClean();
 		std::cout << "\e[1;33mAvailable commands:    \"\e[0mADD\e[1;33m\"   \"\e[0mSEARCH\e[1;33m\"   \"\e[0mEXIT\e[1;33m\"\n\e[0m";
 		std::getline(std::cin, prompt);
+		if (!std::cin)
+			return (0);
 		while (!prompt.length())
 		{
 			screenClean();
@@ -45,6 +49,9 @@ int main() {
 		{
 			screenClean();
 			p.printSearch();
+			std::getline(std::cin, prompt);
+			if (!std::cin)
+				return (0);
 			
 		}
 		else

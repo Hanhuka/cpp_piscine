@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 14:25:53 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/12/02 12:58:35 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/12/05 16:03:26 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	PhoneBook::indexSearch(void) {
 	std::string	index;
 
 	std::getline(std::cin, index);
+	if (!std::cin)
+		return (1);
 	for (int i = 0; index[i]; i++)
 	{
 		if (index.length() == 0 || index[i] <= '0' || index[i] >= '9')
@@ -82,7 +84,7 @@ void	PhoneBook::printSearch(void) {
 
 	if (!c[0].status())
 	{
-		std::cout << "Damn... It's empty" << std::endl;
+		std::cout << "\e[1;91mDamn... \e[1;91mIt's empty\e[0m" << std::endl;
 		return ;
 	}
 	printHeader();
