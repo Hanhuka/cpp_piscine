@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:26:11 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/12/15 13:36:46 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/12/15 14:16:47 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ std::string my_replace(std::string line, std::string replace, std::string n_str)
 			pos = line.find(replace, min);
 		if (i == pos && line[i])
 		{
-			copy.resize(copy.length() - replace.length() + n_str.length() + 1);
+			copy.resize(copy.length() - replace.length() + n_str.length());
 			for (unsigned long i3 = 0; i3 < n_str.length(); i3++, i2++)
 				copy[i2] = n_str[i3];
 			i += replace.length();
@@ -36,26 +36,30 @@ std::string my_replace(std::string line, std::string replace, std::string n_str)
 		else
 			copy[i2] = line[i], i2++, i++;
 	}
-	copy[i2] = 0;
-	std::cout << copy << std::endl;
+	copy[i2] = 0;	
 	return (copy);
 }
 
 int main(int ac, char **av) {
 
-	//FALTA CHECKAR ERROR
 	if (ac != 4)
 		{std::cout << "Error: wrong number of arguments: " << ac - 1 << "\nExpected 3: \"<filename> <string1> <string2>\"" << std::endl; return 1;}
 	std::string out;
-	char out_c[out.length() + 9];
 	out = av[1];
 	out.append(".replace");
-	strcpy(out_c, out.c_str());
 	std::string line;
 	std::ifstream in_file; 
 	std::ofstream out_file;
 	in_file.open(av[1], std::ios::in );
-	out_file.open(out_c, std::ios::trunc);
+	out_file.open(out.c_str(), std::ios::trunc);
+	if (in_file.fail() || out_file.fail())
+		{
+			std::cout << "Error: couldn't open file" << std::endl;
+			if (!in_file.fail())
+				in_file.close();
+			if (!out_file.fail())
+				out_file.close();
+		}
 	if (av[2] && !av[2][0])
 	{
 		if (in_file && out_file)
