@@ -6,7 +6,7 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2022/12/15 11:28:08 by ralves-g         ###   ########.fr        #
+#    Updated: 2022/12/15 16:22:05 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ OBJS		= $(SRCS:.cpp=.o)
 all:		$(NAME)
 
 $(NAME): 	$(OBJS)
-			$(CXX) $(CXXFLAGS) $(SRCS) $(INCLUDE) -c
+			$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) $(INCLUDE)
 
 clean:
 			$(RM) -r $(OBJS)

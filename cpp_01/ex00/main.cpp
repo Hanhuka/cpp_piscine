@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:19:24 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/12/12 11:28:11 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:25:59 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ int main(void) {
 Zombie *nZombie;
 
 nZombie = newZombie("Albert");
-randomChump("Joseph");
 nZombie->announce();
+
+std::cout << std::endl << std::endl;
+
+randomChump("Joseph");
 
 delete nZombie;
 }

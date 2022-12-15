@@ -5,19 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 12:42:34 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/12/15 16:21:19 by ralves-g         ###   ########.fr       */
+/*   Created: 2022/12/15 14:23:13 by ralves-g          #+#    #+#             */
+/*   Updated: 2022/12/15 15:57:25 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Harl.hpp"
 
-int main(void) {
+int main(int ac, char **av)
+{
+	if (ac != 2)
+		return (0);
+	Harl harl;
 
-	std::string hi = "HI THIS IS BRAIN";
-	std::string *stringPTR = &hi;
-	std::string &stringREF = hi;
-	
-	std::cout << &hi << std::endl << stringPTR << std::endl << &stringREF << std::endl;
-	std::cout << hi << std::endl << *stringPTR << std::endl << stringREF << std::endl;
+	harl.complain(av[1]);
 }

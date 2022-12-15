@@ -6,7 +6,7 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2022/12/15 16:22:00 by ralves-g         ###   ########.fr        #
+#    Updated: 2022/12/15 16:06:26 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98
 
 RM 			= rm -f
 
-NAME 		= ZOMBIES
+NAME 		= harlFilter
 
 INCLUDE 	= -I ./
 
-SRCS 		= Zombie.cpp zombieHorde.cpp main.cpp
+SRCS 		= Harl.cpp main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

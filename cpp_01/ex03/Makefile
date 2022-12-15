@@ -6,7 +6,7 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2022/12/15 10:46:28 by ralves-g         ###   ########.fr        #
+#    Updated: 2022/12/15 16:18:28 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98
 
 RM 			= rm -f
 
-NAME 		= Weapons
+NAME 		= Unnecessary_violence
 
 INCLUDE 	= -I ./
 

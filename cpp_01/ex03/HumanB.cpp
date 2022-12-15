@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:39:33 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/12/15 11:23:21 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/12/15 14:30:00 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 HumanB::HumanB(std::string const &n) {
 
-	std::cout << "HumanB constructor called" << std::endl;
+	std::cout << "HumanB default constructor called" << std::endl;
 	this->name = n;
 	this->weapon = NULL;
 	return ;
@@ -22,7 +22,7 @@ HumanB::HumanB(std::string const &n) {
 
 HumanB::~HumanB(void) {
 
-	std::cout << "HumanB destructor called" << std::endl;
+	std::cout << "HumanB default destructor called" << std::endl;
 	return ;
 }
 

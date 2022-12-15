@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 12:42:34 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/12/15 16:21:19 by ralves-g         ###   ########.fr       */
+/*   Created: 2022/12/15 14:23:05 by ralves-g          #+#    #+#             */
+/*   Updated: 2022/12/15 15:46:54 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HARL_HPP
+# define HARL_HPP
+
 #include <iostream>
 
-int main(void) {
+class Harl {
+	public:
+		Harl(void);
+		~Harl(void);
+		void complain(std::string level);
 
-	std::string hi = "HI THIS IS BRAIN";
-	std::string *stringPTR = &hi;
-	std::string &stringREF = hi;
-	
-	std::cout << &hi << std::endl << stringPTR << std::endl << &stringREF << std::endl;
-	std::cout << hi << std::endl << *stringPTR << std::endl << stringREF << std::endl;
-}
+	private:
+		
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+		std::string	type[4];
+};
+
+#endif
