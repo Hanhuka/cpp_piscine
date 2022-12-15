@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:47:22 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/12/15 14:32:21 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/12/15 18:32:10 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Zombie::Zombie(void) {
 }
 
 Zombie::~Zombie(void) {
-	std::cout << "Zombie default destructor called" << std::endl;
+	std::cout << "Zombie "<< name << " default destructor called" << std::endl;
 	return ;
 }
 
