@@ -6,7 +6,7 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2022/12/12 12:43:25 by ralves-g         ###   ########.fr        #
+#    Updated: 2022/12/15 11:27:55 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ all:		$(NAME)
 
 $(NAME): 	$(OBJS)
 			$(CXX) $(CXXFLAGS) $(SRCS) $(INCLUDE) -c
-			$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) $(INCLUDE)
 
 clean:
 			$(RM) -r $(OBJS)

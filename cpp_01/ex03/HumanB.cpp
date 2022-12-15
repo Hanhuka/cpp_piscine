@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:39:33 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/12/14 17:49:48 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/12/15 11:23:21 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 HumanB::HumanB(std::string const &n) {
 
 	std::cout << "HumanB constructor called" << std::endl;
-	name = n;
+	this->name = n;
+	this->weapon = NULL;
 	return ;
 }
 
@@ -25,14 +26,17 @@ HumanB::~HumanB(void) {
 	return ;
 }
 
-void	HumanB::setWeapon(Weapon w) {
+void	HumanB::setWeapon(Weapon &w) {
 
-	weapon = w;
+	this->weapon = &w;
 	return ;
 }
 
 void	HumanB::attack(void) {
 
-	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+	if (this->weapon)
+		std::cout << name << " attacks with their " << weapon->getType() << std::endl;
+	else
+		std::cout << name << " attacks with his bare fists" << std::endl;
 	return ;
 }

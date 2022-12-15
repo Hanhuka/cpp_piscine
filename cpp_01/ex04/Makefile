@@ -6,7 +6,7 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2022/12/15 11:28:08 by ralves-g         ###   ########.fr        #
+#    Updated: 2022/12/15 11:27:05 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,18 +16,18 @@ CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98
 
 RM 			= rm -f
 
-NAME 		= zooooombieeeee
+NAME 		= my_sed
 
 INCLUDE 	= -I ./
 
-SRCS 		= Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRCS 		= main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
 all:		$(NAME)
 
 $(NAME): 	$(OBJS)
-			$(CXX) $(CXXFLAGS) $(SRCS) $(INCLUDE) -c
+			$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) $(INCLUDE)
 
 clean:
 			$(RM) -r $(OBJS)
