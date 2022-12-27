@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:26:11 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/12/15 14:16:47 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/12/27 14:38:49 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,14 @@ int main(int ac, char **av) {
 	in_file.open(av[1], std::ios::in );
 	out_file.open(out.c_str(), std::ios::trunc);
 	if (in_file.fail() || out_file.fail())
-		{
-			std::cout << "Error: couldn't open file" << std::endl;
-			if (!in_file.fail())
-				in_file.close();
-			if (!out_file.fail())
-				out_file.close();
-		}
+	{
+		std::cout << "Error: couldn't open file" << std::endl;
+		if (!in_file.fail())
+			in_file.close();
+		if (!out_file.fail())
+			out_file.close();
+		return (1);
+	}
 	if (av[2] && !av[2][0])
 	{
 		if (in_file && out_file)
