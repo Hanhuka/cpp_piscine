@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:15:40 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/01/03 17:40:04 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:44:58 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ Fixed::Fixed() {
 }
 
 Fixed::Fixed(const int val) {
-	std::cout << "Int constructor called" << std::endl;
 	_FPN = val << _FracBits;
 }
 
 Fixed::Fixed(const float val) {
-	std::cout << "Float constructor called" << std::endl;
 	_FPN = (val * float(1 << _FracBits) + (val >= 0 ? 0.5 : -0.5));
 }
 
@@ -47,6 +45,7 @@ Fixed::~Fixed() {
 }
 
 int Fixed::getRawBits(void) const {
+	std::cout << "getRawBits member function called" << std::endl;
 	return (_FPN);
 }
 
