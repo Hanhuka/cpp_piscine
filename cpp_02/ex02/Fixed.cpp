@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:15:40 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/01/03 15:44:58 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/01/03 18:11:24 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,30 @@ Fixed& Fixed::operator=(const Fixed& copy) {
 	std::cout << "Copy assignment operator called	" << std::endl;
 	_FPN = copy.getRawBits();
 	return *this;
+}
+
+bool Fixed::operator==(const Fixed& test) {
+	return (_FPN == test.getRawBits());
+}
+
+bool Fixed::operator>(const Fixed& test) {
+	return (_FPN > test.getRawBits());
+}
+
+bool Fixed::operator<(const Fixed& test) {
+	return (_FPN < test.getRawBits());
+}
+
+bool Fixed::operator>=(const Fixed& test) {
+	return (_FPN >= test.getRawBits());
+}
+
+bool Fixed::operator<=(const Fixed& test) {
+	return (_FPN <= test.getRawBits());
+}
+
+bool Fixed::operator==(const Fixed& test) {
+	return (_FPN != test.getRawBits());
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& copy) {

@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:01:08 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/01/03 15:44:31 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/01/03 18:07:30 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ public:
 	Fixed(const float val);
 	Fixed(const Fixed& copy);
 	Fixed& operator=(const Fixed& copy);
+	bool operator==(const Fixed& test);
+	bool operator>(const Fixed& test);
+	bool operator<(const Fixed& test);
+	bool operator>=(const Fixed& test);
+	bool operator<=(const Fixed& test);
+	bool operator!=(const Fixed& test);
 	~Fixed();
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
