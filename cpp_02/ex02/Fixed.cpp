@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:15:40 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/01/03 18:11:24 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/01/04 17:55:29 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,57 @@ bool Fixed::operator<=(const Fixed& test) {
 	return (_FPN <= test.getRawBits());
 }
 
-bool Fixed::operator==(const Fixed& test) {
+bool Fixed::operator!=(const Fixed& test) {
 	return (_FPN != test.getRawBits());
+}
+
+Fixed Fixed::operator+(const Fixed& test) {
+	Fixed val;
+	val.setRawBits(this->_FPN + test.getRawBits());
+	return (val);
+}
+
+Fixed Fixed::operator-(const Fixed& test) {
+	Fixed val;
+	val.setRawBits(this->_FPN - test.getRawBits());
+	return (val);
+}
+
+Fixed Fixed::operator*(const Fixed& test) {
+	Fixed val;
+	val.setRawBits((_FPN * test.getRawBits()) >> _FracBits);
+	return val;
+	return val;
+}
+
+Fixed Fixed::operator/(const Fixed& test) {
+	Fixed val;
+	val.setRawBits((_FPN << _FracBits) / test.getRawBits());
+	return val;
+}
+
+Fixed& Fixed::operator++(void) {
+	this->_FPN++;
+	return *this;
+}
+
+Fixed& Fixed::operator--(void) {
+	this->_FPN--;
+	return *this;
+}
+
+Fixed Fixed::operator++(int after) {
+	(void)after;
+	Fixed holder = Fixed(*this);
+	_FPN++;
+	return holder;
+}
+
+Fixed Fixed::operator--(int after) {
+	(void)after;
+	Fixed holder = Fixed(*this);
+	_FPN--;
+	return holder;
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& copy) {
