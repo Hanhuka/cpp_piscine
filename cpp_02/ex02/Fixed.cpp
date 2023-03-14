@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:15:40 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/01/04 17:55:29 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/13 14:41:12 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,26 @@ std::ostream& operator<<(std::ostream& os, const Fixed& copy) {
 
 Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
+}
+
+Fixed&	Fixed::min(Fixed& f1, Fixed& f2)
+{
+	return (f1 < f2 ? f1 : f2);
+}
+
+const Fixed&	min(const Fixed& f1, const Fixed& f2)
+{
+	return (f1 < f2 ? f1 : f2);
+}
+
+Fixed&	Fixed::max(Fixed& f1, Fixed& f2)
+{
+	return (f1 > f2 ? f1 : f2);
+}
+
+const Fixed&	Fixed::max(const Fixed& f1, const Fixed& f2)
+{
+	return (f1 > f2 ? f1 : f2);
 }
 
 int Fixed::getRawBits(void) const {

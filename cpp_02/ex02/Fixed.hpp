@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:01:08 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/01/04 17:56:05 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/13 14:36:27 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ public:
 	Fixed operator++(int after);
 	Fixed operator--(int after);
 	~Fixed();
+	
+	static Fixed&	min(Fixed& f1, Fixed& f2);
+	static Fixed&	min(const Fixed& f1, const Fixed& f2);
+	static Fixed&	max(Fixed& f1, Fixed& f2);
+	static Fixed&	max(const Fixed& f1, const Fixed& f2);
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 	float toFloat(void) const;
