@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:47:10 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/16 16:27:26 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/16 16:07:31 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 class ClapTrap {
 private:
 	ClapTrap();
-	std::string _name;
-	int	_HP;
-	int	_Energy;
-	int	_AD;
-	static int const _repairCost = 1;
-	static int const _attackCost = 1;
+	std::string name;
+	int	HP;
+	int	Energy;
+	int	AD;
+	static int const repairCost = 1;
+	static int const attackCost = 1;
 
 public:
 	ClapTrap(std::string name);

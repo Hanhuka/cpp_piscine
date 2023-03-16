@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 16:31:11 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/16 16:31:14 by ralves-g         ###   ########.fr       */
+/*   Created: 2023/03/16 16:11:24 by ralves-g          #+#    #+#             */
+/*   Updated: 2023/03/16 16:27:04 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
 
-int main()
-{
-	ClapTrap	joe("Joe");
-	ClapTrap	jane("Jane");
+ScavTrap::ScavTrap() {}
 
-	joe.beRepaired(100);
-	joe.beRepaired(100);
-	joe.beRepaired(100);
 
-	joe.beRepaired(100);
-	joe.beRepaired(100);
-	joe.beRepaired(100);
+ScavTrap::ScavTrap(const std::string& name) {
+	std::cout << name <<" ScavTrap constructor called" << std::endl;
+	HP = 100;
+	Energy = 50;
+	AD = 20;
+}
 
-	joe.beRepaired(100);
-	joe.beRepaired(100);
-	joe.beRepaired(100);
-
-	joe.beRepaired(100);
-	joe.beRepaired(100);
+ScavTrap::ScavTrap(const ScavTrap& ref) {
+	std::cout << "ScavTrap copy constructor called" << std::endl;
+	HP = ref.HP;
+	Energy = ref.Energy;
+	AD = ref.AD;
+	name = ref.name;
 }

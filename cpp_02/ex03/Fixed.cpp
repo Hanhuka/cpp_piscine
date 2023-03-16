@@ -6,14 +6,13 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:15:40 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/15 15:39:52 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:41:36 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 Fixed::Fixed() {
-	std::cout << "Default constructor called" << std::endl;
 	_FPN = 0;
 }
 
@@ -26,12 +25,10 @@ Fixed::Fixed(const float val) {
 }
 
 Fixed::Fixed(const Fixed& copy){
-	std::cout << "Copy constructor called" << std::endl;
 	operator=(copy);
 }
 
 Fixed& Fixed::operator=(const Fixed& copy) {
-	std::cout << "Copy assignment operator called	" << std::endl;
 	_FPN = copy.getRawBits();
 	return *this;
 }
@@ -114,7 +111,6 @@ std::ostream& operator<<(std::ostream& os, const Fixed& copy) {
 }
 
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed&	Fixed::min(Fixed& f1, Fixed& f2)
@@ -138,7 +134,6 @@ const Fixed&	Fixed::max(const Fixed& f1, const Fixed& f2)
 }
 
 int Fixed::getRawBits(void) const {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (_FPN);
 }
 
