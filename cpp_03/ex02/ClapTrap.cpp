@@ -6,13 +6,15 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:56:24 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/17 11:59:33 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/17 15:38:58 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(){;}
+ClapTrap::ClapTrap(){
+	std::cout << "ClapTrap default constructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name)
 {
@@ -30,7 +32,7 @@ ClapTrap::ClapTrap(const ClapTrap& ref)
 	this->_HP = ref._HP;
 	this->_AD = ref._AD;
 	this->_Energy = ref._Energy;
-}
+}	
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& copy)
 {
@@ -47,7 +49,7 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << this->_name << " can't perform the attack. Not enough energy" << std::endl;
 	else if (this->_HP)
 	{
-		std::cout << this->_name << " attacked " << target << "for " << this->_AD << " HP!"<< std::endl;
+		std::cout << this->_name << " ClapTrap attacked " << target << "for " << this->_AD << " HP!"<< std::endl;
 		this->_Energy -= _attackCost;
 	}
 }

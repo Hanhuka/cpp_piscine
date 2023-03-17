@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 16:31:11 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/17 15:49:43 by ralves-g         ###   ########.fr       */
+/*   Created: 2023/03/16 16:09:07 by ralves-g          #+#    #+#             */
+/*   Updated: 2023/03/17 15:11:19 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ClapTrap.hpp"
+#include "ClapTrap.hpp"
 
-int main()
-{
-	ClapTrap	joe("Joe");
-	ClapTrap	jane("Jane");
-
-
-for (int i = 0; i < 10; i++)
-	joe.beRepaired(100);
-}
+class ScavTrap : public ClapTrap{
+protected:
+	ScavTrap();
+public:
+	ScavTrap(const std::string& name);
+	ScavTrap(const ScavTrap& ref);
+	ScavTrap&	operator=(const ScavTrap& ref);
+	virtual void attack(const std::string& target);
+	void	guardGate();
+	~ScavTrap();
+};

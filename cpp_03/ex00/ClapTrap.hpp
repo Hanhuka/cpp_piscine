@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:47:10 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/16 16:27:26 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/17 11:57:51 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ private:
 
 public:
 	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap& ref);
 	ClapTrap&	operator=(const ClapTrap& copy);
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);

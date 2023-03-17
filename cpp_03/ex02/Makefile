@@ -6,7 +6,7 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2023/03/16 17:14:53 by ralves-g         ###   ########.fr        #
+#    Updated: 2023/03/17 15:42:26 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME 		= ClapTrap
 
 INCLUDE 	= -I ./
 
-SRCS 		= ScavTrap.cpp ClapTrap.cpp main.cpp
+SRCS 		= FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
