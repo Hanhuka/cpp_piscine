@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:56:24 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/17 11:59:33 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/21 11:14:38 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << this->_name << " can't perform the attack. Not enough energy" << std::endl;
 	else if (this->_HP)
 	{
-		std::cout << this->_name << " attacked " << target << "for " << this->_AD << " HP!"<< std::endl;
+		std::cout << this->_name << " attacked " << target << " for " << this->_AD << " HP!"<< std::endl;
 		this->_Energy -= _attackCost;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:11:24 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/17 15:46:08 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/21 11:14:05 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void ScavTrap::attack(const std::string& target) {
 		std::cout << this->_name << " can't perform the attack. Not enough energy" << std::endl;
 	else if (this->_HP)
 	{
-		std::cout << this->_name << " ScavTrap attacked " << target << "for " << this->_AD << " HP!"<< std::endl;
+		std::cout << this->_name << " ScavTrap attacked " << target << " for " << this->_AD << " HP!"<< std::endl;
 		this->_Energy -= _attackCost;
 	}
 }

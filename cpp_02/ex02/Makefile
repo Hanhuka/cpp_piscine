@@ -6,13 +6,13 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2022/12/29 16:08:43 by ralves-g         ###   ########.fr        #
+#    Updated: 2023/03/21 12:16:52 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX 			= c++
 
-CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98 -O0
 
 RM 			= rm -f
 
