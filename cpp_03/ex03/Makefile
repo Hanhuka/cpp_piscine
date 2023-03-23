@@ -6,7 +6,7 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2023/03/23 16:24:29 by ralves-g         ###   ########.fr        #
+#    Updated: 2023/03/23 16:24:13 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98
 
 RM 			= rm -f
 
-NAME 		= ScavTrap
+NAME 		= DiamondTrap
 
 INCLUDE 	= -I ./
 
-SRCS 		= ScavTrap.cpp ClapTrap.cpp main.cpp
+SRCS 		= DiamondTrap.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
