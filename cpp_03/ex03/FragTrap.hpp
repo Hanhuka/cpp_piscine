@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:12:00 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/21 14:57:49 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:05:09 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ public:
 	FragTrap(const std::string name);
 	FragTrap(const FragTrap& ref);
 	FragTrap& operator=(const FragTrap& ref);
-	void attack(const std::string& target);
 	void	highFiveGuys(void);
 	~FragTrap();
 };

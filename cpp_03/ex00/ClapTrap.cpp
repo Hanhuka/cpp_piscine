@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:56:24 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/21 11:14:38 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/28 15:04:29 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ ClapTrap::ClapTrap(const ClapTrap& ref)
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& copy)
 {
+	std::cout << "ClapTrap assignment operator called" << std::endl;
 	this->_name = copy._name;
 	this->_HP = copy._HP;
 	this->_AD = copy._AD;
@@ -57,7 +58,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	amount = this->_HP < (int)amount ? this->_HP : amount;
 	if (this->_HP > 0)
 	{
-		std::cout << this->_name << " lost " << amount << "HP" << std::endl;
+		std::cout << this->_name << " lost " << amount << "HP"  << std::endl;
 		this->_HP -= amount;
 	}
 	if (this->_HP < 0)

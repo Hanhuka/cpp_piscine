@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:31:11 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/17 15:49:31 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/28 15:16:56 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,16 @@
 
 int main()
 {
+	ScavTrap	joe("Joe");
+	ScavTrap	joe2("Joe2");
+	joe2 = joe;
 	ScavTrap	jane("Jane");
-	ScavTrap	joe(jane);
+	ScavTrap	jane2(jane);
 
-for (int i = 0; i < 10; i++)
-	joe.beRepaired(100);
+joe.guardGate();
+for (int i = 0; i < 25; i++)
+	joe.beRepaired(10);
+for (int i = 0; i < 26; i++)
+	joe.attack("Jane");
+joe.takeDamage(1000);
 }

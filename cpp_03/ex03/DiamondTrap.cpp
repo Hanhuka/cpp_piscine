@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 14:40:52 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/23 16:23:47 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/28 14:07:05 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 DiamondTrap::DiamondTrap() {};
 
-DiamondTrap::DiamondTrap(const DiamondTrap& ref) {
+DiamondTrap::DiamondTrap(const DiamondTrap& ref) : ClapTrap(ref._name + "_clap_name"), ScavTrap(), FragTrap(){
 std::cout << "DiamondTrap copy constructor called" << std::endl;
 _HP = ref._HP;
 _Energy = ref._Energy;
@@ -24,11 +24,12 @@ _name = ref._name;
 
 DiamondTrap::DiamondTrap(const std::string name): ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap() {
 _name = name;
-std::cout << name << " DiamondTrap copy constructor called" << std::endl;
+std::cout << name << " DiamondTrap constructor called" << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& ref) {
 std::cout << "DiamondTrap assignment operator called" << std::endl;
+ClapTrap::_name = ref.ClapTrap::_name;
 _HP = ref._HP;
 _Energy = ref._Energy;
 _AD = ref._AD;

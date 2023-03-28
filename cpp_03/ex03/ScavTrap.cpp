@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:11:24 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/23 16:09:57 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:04:43 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void ScavTrap::attack(const std::string& target) {
 
 void	ScavTrap::guardGate()
 {
-	if (_HP <= 0 && _Energy)
+	if (_HP > 0 && _Energy)
 		std::cout << _name << " is now in Gate keeper mode" << std::endl;
-	if (_HP)
+	else if (_HP > 0)
 		std::cout << _name << " does not have the energy to perform such task" << std::endl;
 }
 

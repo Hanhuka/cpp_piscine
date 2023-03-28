@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 14:46:26 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/03/21 11:14:13 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/03/28 15:18:56 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,9 @@ _name = ref._name;
 return *this;
 }
 
-void	FragTrap::attack(const std::string& target)
-{
-	if (this->_HP && this->_Energy < this->_attackCost)
-		std::cout << this->_name << " can't perform the attack. Not enough energy" << std::endl;
-	else if (this->_HP)
-	{
-		std::cout << this->_name << " FragTrap attacked " << target << " for " << this->_AD << " HP!"<< std::endl;
-		this->_Energy -= _attackCost;
-	}
+void	FragTrap::highFiveGuys() {
+	if (_HP > 0 && _Energy >= 0)
+	std::cout << _name << " raises his hand energetically in hopes that someone highfives him..." << std::endl;
 }
 
 FragTrap::~FragTrap() {
