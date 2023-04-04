@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 14:33:01 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/04/03 17:00:11 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:35:51 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,19 @@
 
 int main()
 {
-const Animal		*meta = new Animal();
-const Animal		*j = new Dog();
-const Animal		*i = new Cat();
-const WrongAnimal	*h = new WrongCat();
+Animal	*dogsAndCats[10];
+// dogsAndCats = new Animal*[10];
 
-std::cout << "type> "<< j->getType() << " " << std::endl;
-std::cout << "type> "<< i->getType() << " " << std::endl;
-std::cout << "type> "<< h->getType() << " " << std::endl;
-std::cout << "type> "<< meta->getType() << " " << std::endl;
-j->makeSound();
-i->makeSound();
-h->makeSound();
-meta->makeSound();
-delete meta;
-delete j;
-delete i;
-delete h;
-return 0;
+for (int i = 0; i < 10; i++)
+{
+	if (i < 5)
+		dogsAndCats[i] = new Dog();
+	else
+		dogsAndCats[i] = new Cat();
+}
+for (int i = 0;  i <10; i++)
+	dogsAndCats[i]->ideas();
+for (int i = 0;  i <10; i++)
+	delete dogsAndCats[i];
+// delete [] dogsAndCats;
 }

@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 14:32:48 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/04/03 15:59:03 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:49:11 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ Animal& Animal::operator=(const Animal& ref) {
 
 void	Animal::makeSound() const {
 std::cout << "┴RV═ZT█RŇT▄KÍRF┌لمىPßrvÝz｡繝�ｼ繝ｫtűr§Ã¡„Ø§�̃�†rŘ§ŮvÃz¼kÃ¶rfÃºrÃ³gÃ©" << std::endl;
+}
+
+void	Animal::ideas() const {
+std::cout << "[Muffled]" << std::endl;
 }
 
 std::string Animal::getType() const {
