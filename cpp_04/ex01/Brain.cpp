@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 17:09:17 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/04/04 16:54:40 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/04/12 15:48:45 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,20 @@ Brain& Brain::operator=(const Brain& ref) {
 	return (*this);
 }
 
+void	Brain::setIdea(const std::string newIdea, const int& i) {
+	_ideas[i] = newIdea;
+}
+
+std::string	Brain::giveIdea(const int &i)
+{
+	_ideas[i] = getRandIdea();
+	return (_ideas[i]);
+}
+
 std::string	*Brain::giveIdeas() {
 	return (_ideas);
 }
+
 
 Brain::~Brain() {
 	std::cout << "Brain destructor called" << std::endl;

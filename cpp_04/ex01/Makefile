@@ -6,13 +6,13 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2023/04/04 12:57:40 by ralves-g         ###   ########.fr        #
+#    Updated: 2023/04/10 15:47:30 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX 			= c++
 
-CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
+CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 
 RM 			= rm -f
 

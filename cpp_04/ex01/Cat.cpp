@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 14:32:41 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/04/04 16:31:16 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/04/12 15:52:17 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Cat::Cat(const Cat& ref) {
 }
 
 Cat&	Cat::operator=(const Cat& ref) {
-	std::cout << "Cat copy constructor called" << std::endl;
+	std::cout << "Cat assignment operator called" << std::endl;
 	_type = ref._type;
 	_brain = new Brain(*(ref._brain));
 	Animal::_type = ref.Animal::_type;
