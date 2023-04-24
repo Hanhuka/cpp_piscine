@@ -6,7 +6,7 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2023/04/17 15:45:27 by ralves-g         ###   ########.fr        #
+#    Updated: 2023/04/17 16:14:22 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
 
 RM 			= rm -f
 
-NAME 		= worldOnFire
+NAME 		= abstractClass
 
 INCLUDE 	= -I ./
 

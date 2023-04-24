@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 14:33:01 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/04/17 15:58:53 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/04/17 16:23:19 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
-int main()
-{
+int main() {
 Dog *test;
 Dog *test2;
 Dog	*test3;
