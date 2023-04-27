@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 12:06:49 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/04/24 16:21:20 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/04/27 12:03:53 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ std::string	const&	Character::getName() const {
 }
 
 void	Character::equip(AMateria* m) {
+	if (!m)
+	{
+		std::cout << _name << " cannot equip a null Materia" << std::endl;
+		return ;
+	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (!_materias[i])

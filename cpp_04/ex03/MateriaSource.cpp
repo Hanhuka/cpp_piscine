@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:41:47 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/04/24 16:30:26 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/04/27 12:02:16 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ AMateria*	MateriaSource::createMateria(std::string const& type) {
 	for (int i = 0; i < 4; i++)
 		if (_learntMaterias[i] && type == _learntMaterias[i]->getType())
 			return (_learntMaterias[i]->clone());
-	std::cout << "Couldn't learn Materia type doesnt match" << std::endl;
+	std::cout << "Couldn't create Materia. Type doesnt match any learnt Materia" << std::endl;
 	return (0);
 }
 

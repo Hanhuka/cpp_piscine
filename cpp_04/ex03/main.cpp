@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:23:42 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/04/24 16:29:09 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:23:26 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int main()
 	delete me;
 	delete src;
 
-
 	std::cout << "\n\n\n\n";
 	src = new MateriaSource();
 	src->learnMateria(new Ice());
@@ -45,7 +44,6 @@ int main()
 	me2.equip(tmp);
 	src->createMateria("fire");
 	ICharacter* clone = new Character(me2);
-	
 
 	std::cout << "[me2]" << std::endl;
 	me2.use(0, *clone);

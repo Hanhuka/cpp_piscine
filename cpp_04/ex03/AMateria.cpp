@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:17:46 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/04/21 14:53:02 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/04/27 12:04:46 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 AMateria::AMateria() {}
 
-AMateria::AMateria(std::string const& type) {
-	this->_type = type;
-}
+AMateria::AMateria(std::string const& type): _type(type) {}
 
 AMateria::AMateria(AMateria const& ref) {(void)ref;}
 
