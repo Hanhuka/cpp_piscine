@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:31:58 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/05/12 16:57:33 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/05/12 17:04:57 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,20 +74,6 @@ void	Bureaucrat::signForm(Form& toSign) {
 		std::cout << e.what() << std::endl;
 	}
 	
-}
-
-void	Bureaucrat::executeForm(Form const& form)
-{
-	try
-	{
-		form.execute(*this);
-		std::cout << _name << " executed " << form.getName() << std::endl;
-	}
-	catch(std::exception& e)
-	{
-		std::cout << _name << " couldn't execute " << form.getName() << " because ";
-		std::cout << e.what() << std::endl;
-	}
 }
 
 Bureaucrat::~Bureaucrat() {}

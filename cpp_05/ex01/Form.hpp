@@ -33,8 +33,6 @@ class Form {
 		int	getGradeToSign() const;
 		int	getGradeToExec() const;
 		void	beSigned(Bureaucrat const& signer);
-		void	isExecutable(Bureaucrat const& executor) const;
-		virtual void	execute(Bureaucrat const& executor) const = 0;
 		class GradeToLowException: public std::exception {	
 			virtual const char* what() const _GLIBCXX_NOTHROW;
 		};

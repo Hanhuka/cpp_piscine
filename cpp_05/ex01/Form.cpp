@@ -60,11 +60,4 @@ int	Form::getGradeToExec() const {
 	return (_gradeToExec);
 }
 
-void	Form::isExecutable(Bureaucrat const& executor) const {
-	if (!_signed)
-		throw NotSignedException();
-	if (executor.getGrade() > _gradeToExec)
-		throw GradeToLowException();
-}
-
 Form::~Form() {}
