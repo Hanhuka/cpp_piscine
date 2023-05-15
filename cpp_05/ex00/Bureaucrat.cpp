@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:31:58 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/05/04 17:10:03 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/05/15 14:56:40 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,13 @@ int Bureaucrat::getGrade() const {
 void	Bureaucrat::incrementGrade() {
 	if (_grade - 1 < 1)
 		throw Bureaucrat::GradeTooHighException();
+	std::cout << _name << " went form grade " << _grade << " to grade " << _grade - 1 << std::endl; 
 	_grade--;
 }
 void	Bureaucrat::decrementGrade() {
 	if (_grade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();
+	std::cout << _name << " went form grade " << _grade << " to grade " << _grade + 1 << std::endl; 
 	_grade++;
 }
 

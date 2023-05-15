@@ -45,4 +45,7 @@ class Form {
 		~Form();
 };
 
+std::ostream& operator<<(std::ostream& os, Form const& ref);
+
+
 #endif
