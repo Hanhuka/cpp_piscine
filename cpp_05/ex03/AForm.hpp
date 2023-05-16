@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:14:23 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/05/15 16:44:38 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:48:08 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,9 @@ class AForm {
 		class NotSignedException: public std::exception {
 			virtual const char* what() const _GLIBCXX_NOTHROW;
 		};
-		~AForm();
+		virtual ~AForm();
 };
+
+std::ostream& operator<<(std::ostream& os, AForm const& ref);
 
 #endif

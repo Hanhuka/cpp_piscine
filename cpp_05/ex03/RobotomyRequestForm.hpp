@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:07:50 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/05/08 12:08:31 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/05/16 14:43:35 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class RobotomyRequestForm: public AForm {
 	private:
 		RobotomyRequestForm();
-		std::string	_target;
 	public:
 		RobotomyRequestForm&	operator=(RobotomyRequestForm const& ref);
 		RobotomyRequestForm(RobotomyRequestForm const& ref);

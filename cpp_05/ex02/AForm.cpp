@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:20:00 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/05/15 16:45:02 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:46:07 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,3 +77,8 @@ void	AForm::isExecutable(Bureaucrat const& executor) const {
 }
 
 AForm::~AForm() {}
+
+std::ostream& operator<<(std::ostream& os, AForm const& ref) {
+	std::cout << "Form name: " << ref.getName() << ", gradeToSign: " << ref.getGradeToSign() << ", gradeToExecute: " << ref.getGradeToExec() << std::endl;
+	return (os);
+}

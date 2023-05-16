@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 16:35:49 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/05/12 16:37:29 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/05/16 14:43:26 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class PresidentialPardonForm: public AForm {
 	private:
 		PresidentialPardonForm();
-		std::string	_target;
 	public:
 		PresidentialPardonForm&	operator=(PresidentialPardonForm const& ref);
 		PresidentialPardonForm(PresidentialPardonForm const& ref);

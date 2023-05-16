@@ -63,6 +63,6 @@ int	Form::getGradeToExec() const {
 Form::~Form() {}
 
 std::ostream& operator<<(std::ostream& os, Form const& ref) {
-	std::cout << "Form name: " << ref.getName() << ", gradeToSign: " << ref.getGradeToSign() << ", gradeToExecute" << ref.getGradeToExec() << std::endl;
+	std::cout << "Form name: " << ref.getName() << ", gradeToSign: " << ref.getGradeToSign() << ", gradeToExecute: " << ref.getGradeToExec() << std::endl;
 	return (os);
 }
