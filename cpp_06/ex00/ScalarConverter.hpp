@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:19:10 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/05/15 17:27:37 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/05/25 13:06:02 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class ScalarConverter {
 		ScalarConverter();
 		ScalarConverter(ScalarConverter const& ref);
 		ScalarConverter&	operator=(ScalarConverter const& ref);
-		void	converter(std::string const& toConvert);
+		static void	converter(std::string const& toConvert);
 		~ScalarConverter();
-}
+};
 
 #endif

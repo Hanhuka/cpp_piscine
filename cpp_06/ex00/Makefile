@@ -6,34 +6,34 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2023/05/15 18:10:24 by ralves-g         ###   ########.fr        #
+#    Updated: 2023/05/25 12:57:30 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX 			= c++
+CXX 		= c++
 
-CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98 #-g #-fsanitize=address
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g #-fsanitize=address
 
-RM 			= rm -f
+RM			= rm -f
 
-NAME 		= ScalarConverter
+NAME		= ScalarConverter
 
-INCLUDE 	= -I ./
+INCLUDE		= -I ./
 
-SRCS 		= main.cpp
+SRCS		= converterUtils.cpp ScalarConverter.cpp main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
 all:		$(NAME)
 
-$(NAME): 	$(OBJS)
+$(NAME):	$(OBJS)
 			$(CXX) $(CXXFLAGS) $(SRCS) $(INCLUDE) -c
 			$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) $(INCLUDE)
 
 clean:
 			$(RM) -r $(OBJS)
 
-fclean : 	clean
+fclean :	clean
 			$(RM) $(NAME)
 
 re:			fclean all
