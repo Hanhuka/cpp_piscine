@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:19:14 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/05/29 15:29:37 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:30:25 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,13 @@ void	ScalarConverter::converter(std::string const& toConvert) {
 		case 1: //int
 			castInt(toConvert);
 			break ;
-		// case 2: //double
-		// 	castDbl(toConvert);
-		// 	break ;
-		// case 3:
-		// 	castFlt(toConvert);
-		// 	break ;
+		case 2:
+			castFlt(toConvert);
+			break ;
+		case 3: //double
+			castDbl(toConvert);
+			break ;
 		// case 4:
-		// 	castDblL(toConvert);
-		// 	break ;
-		// case 5:
-		// 	castFltL(toConvert);
-		// 	break ;
 		// default :
 		// 	castUnknn(toConvert);
 	}
