@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:19:14 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/05/31 14:30:25 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:37:40 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ ScalarConverter&	ScalarConverter::operator=(ScalarConverter const& ref) {
 void	ScalarConverter::converter(std::string const& toConvert) {
 	int type = getType(toConvert);
 
+	std::cout << "type: " << type << std::endl;
 	switch (type) 
 	{
 		case 0:
@@ -42,9 +43,10 @@ void	ScalarConverter::converter(std::string const& toConvert) {
 		case 3: //double
 			castDbl(toConvert);
 			break ;
-		// case 4:
-		// default :
-		// 	castUnknn(toConvert);
+		default :
+			unknn();
 	}
 }
+
+ScalarConverter::~ScalarConverter() {}
 

@@ -6,7 +6,7 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2023/06/05 14:19:48 by ralves-g         ###   ########.fr        #
+#    Updated: 2023/06/01 17:53:11 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g #-fsanitize=address
 
 RM			= rm -f
 
-NAME		= converter
+NAME		= Identifier
 
 INCLUDE		= -I ./
 
-SRCS		= converterUtils.cpp ScalarConverter.cpp main.cpp
+SRCS		= Base.cpp utils.cpp main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

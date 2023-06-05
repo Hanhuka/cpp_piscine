@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:32:14 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/05/31 14:30:45 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:07:47 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	castInt(std::string toConvert);
 void	castChr(std::string toConvert);
 void	castFlt(std::string toConvert);
 void	castDbl(std::string toConvert);
+void	unknn(void);
 
 
 #endif

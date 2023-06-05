@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:32:04 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/05/31 15:14:58 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:43:22 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	getType(std::string toCheck) {
 	{
 		if (dotCount)
 		{
-			if (*toCheck.end() == 'f')
+			if (*(toCheck.end() - 1) == 'f')
 				return (T_FLT);
 			return (T_DBL);
 		}
@@ -86,7 +86,7 @@ void	castInt(std::string toConvert) {
 	if (val < 0 || val > 127)
 		std::cout << "char: impossible\n";
 	else if (isprint(val))
-		std::cout << "char: '" << val << "'\n";
+		std::cout << "char: '" << static_cast<char>(val) << "'\n";
 	else
 		std::cout << "char: Non displayable\n";
 	std::cout << "int: " << val << "\n";
@@ -98,52 +98,56 @@ void	castInt(std::string toConvert) {
 void	castFlt(std::string toConvert) {
 	double	lmtChck = atof(toConvert.c_str());
 
-	if (toConvert == "nanf" || toConvert == "-nanf" || toConvert == "+nanf")
+	if (toConvert == "nanf" || toConvert == "-inff" || toConvert == "+inff")
 	{
 		std::cout << "int: impossible\nchar: impossible\nfloat: " << toConvert << "\ndouble: " << toConvert.substr(0, toConvert.size() - 1) << std::endl;
 		return ;
 	}
-	if (lmtChck > std::numeric_limits<float>::max() || lmtChck < std::numeric_limits<float>::min())
+	if (lmtChck > std::numeric_limits<float>::max() || lmtChck < std::numeric_limits<float>::max() * -1)
 	{
 		std::cerr << "Error: Float overflow" << std::endl;
 		return ;
 	}	
 	float	val = atof(toConvert.c_str());
-	if (lmtChck > std::numeric_limits<int>::max() || lmtChck < std::numeric_limits<int>::min())
-		std::cout << "int: Impossible\n";
-	else
-		std::cout << "int: " << static_cast<int>(val) << "\n";
 	if (val < 0 || val > 127)
 		std::cout << "char: impossible\n";
 	else if (isprint(val))
-		std::cout << "char: '" << val << "'\n";
+		std::cout << "char: '" << static_cast<char>(val) << "'\n";
 	else
 		std::cout << "char: Non displayable\n";
+	if (lmtChck > std::numeric_limits<int>::max() || lmtChck < std::numeric_limits<int>::min())
+		std::cout << "int: impossible\n";
+	else
+		std::cout << "int: " << static_cast<int>(val) << "\n";
 	std::cout << "float: " << val << "f\n";
 	std::cout << "double: " << static_cast<double>(val) << "\n";
 }
 
 void	castDbl(std::string toConvert) {
 
-	if (toConvert == "nan" || toConvert == "-nan" || toConvert == "+nan")
+	if (toConvert == "nan" || toConvert == "-inf" || toConvert == "+inf")
 	{
 		std::cout << "int: impossible\nchar: impossible\nfloat: " << toConvert << "f\ndouble: " << toConvert << std::endl;
 		return ;
 	}
-	float	val = atof(toConvert.c_str());
-	if (val > std::numeric_limits<int>::max() || val < std::numeric_limits<int>::min())
-		std::cout << "int: Impossible\n";
-	else
-		std::cout << "int: " << static_cast<int>(val) << "\n";
+	double	val = atof(toConvert.c_str());
 	if (val < 0 || val > 127)
 		std::cout << "char: impossible\n";
 	else if (isprint(val))
-		std::cout << "char: '" << val << "'\n";
+		std::cout << "char: '" << static_cast<char>(val) << "'\n";
 	else
 		std::cout << "char: Non displayable\n";
+	if (val > std::numeric_limits<int>::max() || val < std::numeric_limits<int>::min())
+		std::cout << "int: impossible\n";
+	else
+		std::cout << "int: " << static_cast<int>(val) << "\n";
 	if (val > std::numeric_limits<float>::max() || val < std::numeric_limits<float>::min())
 		std::cout << "float: Impossible\n";
 	else
 		std::cout << "float: " << static_cast<float>(val) << "f\n";
 	std::cout << "double: " << val << "\n";
+}
+
+void	unknn(void) {
+	std::cerr << "Error: Coudln't convert string because it does not match any available type" << std::endl;
 }
