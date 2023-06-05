@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:32:04 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/06/05 14:43:22 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:55:01 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ void	castDbl(std::string toConvert) {
 		std::cout << "int: impossible\n";
 	else
 		std::cout << "int: " << static_cast<int>(val) << "\n";
-	if (val > std::numeric_limits<float>::max() || val < std::numeric_limits<float>::min())
+	if (val > std::numeric_limits<float>::max() || val < std::numeric_limits<float>::max() * -1)
 		std::cout << "float: Impossible\n";
 	else
 		std::cout << "float: " << static_cast<float>(val) << "f\n";
