@@ -6,7 +6,7 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 11:20:57 by ralves-g          #+#    #+#              #
-#    Updated: 2023/06/05 15:29:30 by ralves-g         ###   ########.fr        #
+#    Updated: 2023/06/09 18:23:30 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g #-fsanitize=address
 
 RM			= rm -f
 
-NAME		= converter
+NAME		= array
 
 INCLUDE		= -I ./
 
