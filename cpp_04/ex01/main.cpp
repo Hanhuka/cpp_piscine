@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 14:33:01 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/04/27 12:39:47 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:39:59 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main() {
 	for (int i = 0; i < animalCount; i++)
 		if (animal[i])
 			delete animal[i];
-	
+
 	std::cout << "\n\n [Assignment test]\n" << std::endl;
 	
 	Dog	*dog1 = new Dog();
