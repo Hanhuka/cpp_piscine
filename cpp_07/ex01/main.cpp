@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:21:11 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/06/09 16:02:38 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/06/09 18:32:45 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	myIntFree(int *toFree)
 void	printString(std::string str) {
 	std::cout << str << std::endl;
 }
-
-
 
 int main() {
 	int **test = new int*[10];

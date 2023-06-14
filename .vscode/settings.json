@@ -1,0 +1,10 @@
+{
+	"files.associations": {
+		"iostream": "cpp",
+		"bureaucrat.hpp": "c",
+		"iosfwd": "cpp",
+		"string_view": "cpp",
+		"limits": "cpp",
+		"iomanip": "cpp"
+	}
+}
