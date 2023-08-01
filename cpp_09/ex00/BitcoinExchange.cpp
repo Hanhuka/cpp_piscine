@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 14:33:26 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/08/01 15:14:15 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/08/01 17:31:52 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,7 @@ void	btcExchange(std::ifstream &input, std::ifstream &database_file) {
 	}
 	// for (std::map<std::string, double>::iterator i = database.begin(); i != database.end(); i++)
 	// 	std::cout << "Date = " << i->first << " Value = " << i->second << std::endl;
+	std::getline(input, buffer);
 	while (std::getline(input, buffer))
 	{
 		format = isRightFormat(buffer);
@@ -163,6 +164,10 @@ void	btcExchange(std::ifstream &input, std::ifstream &database_file) {
 				std::cout << buffer.substr(0, 11) << "=>" << buffer.substr(12) \
 				<< " = " << (iter)->second * std::atof(buffer.substr(13).c_str()) << std::endl;
 				//<< " Using - Date = " << iter->first << " Value = " << iter->second << std::endl;
+			}
+			else
+			{
+				std::cerr << "Error: no matching or closest lower date -> " << buffer << std::endl;
 			}
 		}
 	}

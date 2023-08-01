@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:35:01 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/07/31 18:45:22 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/08/01 17:26:39 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,14 +90,14 @@ void	rpnAlgorithm(std::string line) {
 			// std::cout << "result = " << performOperation(fstOperand, sndOperand, line[i]) << std::endl;
 			stack.push(performOperation(fstOperand, sndOperand, line[i]));
 		}
-		// if (line[i] >= '0' && line[i] <= '9')
-		// 	stack.push(line[i] - '0');
 		if (line[i] >= '0' && line[i] <= '9')
-			stack.push(std::atoi(line.c_str() + i));
+			stack.push(line[i] - '0');
+		// if (line[i] >= '0' && line[i] <= '9')
+		// 	stack.push(std::atoi(line.c_str() + i));
 		// if (line[i] >= '0' && line[i] <= '9')
 		// 	std::cout << "pushing: " << std::atoi(line.c_str() + i) << std::endl;
-		while (line[i] >= '0' && line[i] <= '9')
-			i++;
+		// while (line[i] >= '0' && line[i] <= '9')
+		// 	i++;
 	}
 	if (stack.size() != 1)
 	{

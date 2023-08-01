@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:21:26 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/08/01 15:21:26 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/08/01 17:33:42 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,12 @@ int main(int ac, char** av) {
 		vtr.push_back(std::atoi(av[i]));
 	vectorSortAndMerge(vtr, 0, vtr.size() - 1);
 	end = timeUs();
+	std::cout << "After: ";
+	for (std::vector<int>::iterator itr = vtr.begin(); itr != vtr.end(); itr++)
+	{
+		std::cout << *itr << " ";
+	}
+	std::cout << "\n" << std::endl;
 	std::cout << "Time to process a range of 3000 elements with std::vector : " << end - start << " us" << std::endl;
 
 	start = timeUs();
@@ -75,15 +81,9 @@ int main(int ac, char** av) {
 	end = timeUs();
 
 	std::cout << "Time to process a range of 3000 elements with std::deque : " << end - start << " us\n" << std::endl;
-	std::cout << "After: ";
-	for (std::vector<int>::iterator itr = vtr.begin(); itr != vtr.end(); itr++)
-	{
-		std::cout << *itr << " ";
-	}
 	// std::cout << "\n" << std::endl;
 	// for (std::deque<int>::iterator itr = dqe.begin(); itr != dqe.end(); itr++)
 	// {
 	// 	std::cout << *itr << " ";
 	// }
-	std::cout << std::endl;
 }
