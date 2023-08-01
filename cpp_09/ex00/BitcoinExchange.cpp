@@ -6,12 +6,50 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 14:33:26 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/07/19 15:11:04 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/08/01 15:14:15 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 #include <map>
+#include <limits>
+
+bool	check_csv(std::string line) {
+	bool	dot = false;
+	bool	number = false;
+	int		i;
+	double	test;
+	
+
+	if (line.length() < 11)
+		return false;
+	for (i = 0; i <= 10; i++)
+	{
+		if ((i == 4 || i == 7) && line[i] != '-')
+			return false;
+		else if ((i == 10) && line[i] != ',')
+			return false;
+		else if (line[i] < '0' && line[i] > '9')
+			return false;
+	}
+	test = std::atof(line.substr(11).c_str());
+	if (test > std::numeric_limits<float>::max() || test < 0)
+		return false;
+	for (i = 11; line[i] && ((line[i] >= '0' && line[i] <= '9') || line[i] == '.'); i++)
+	{
+		if (line[i] == '.')
+		{
+			if (dot)
+				return false;
+			dot = true;
+		}
+		if (line[i] >= '0' && line[i] <= '9')
+			number = true;
+	}
+	if (line[i] || !number || !isValidDate(line))
+		return false;
+	return true;
+}
 
 int	isRightFormat(std::string line) {
 	bool	dot = false;
@@ -66,6 +104,8 @@ bool	isValidDate(std::string date) {
 	buffer =  date.substr(date.find_first_not_of("0123456789", date.find_first_not_of("0123456789") + 1) + 1);
 	int day = std::atoi(buffer.c_str());
 
+	
+
 	// std::cout << "Year: " << year << " Month: " << month << " Day: " << day << std::endl;
 	if (year <= 0 || month <= 0 || day <= 0 || month > 12 || day > 31)
 		return false;
@@ -90,6 +130,11 @@ void	btcExchange(std::ifstream &input, std::ifstream &database_file) {
 	std::getline(database_file, buffer);
 	while (std::getline(database_file, buffer))
 	{
+		if (!check_csv(buffer))
+		{
+			std::cerr << "Error on csv file, line: " << buffer << std::endl;
+			return ;
+		}
 		tmp_buff = buffer.substr(buffer.find(",") + 1);
 		tmp = tmp_buff.c_str();
 		// std::cout << "inserting: " << buffer.substr(0, 10) << " and " << tmp << std::endl;
@@ -97,8 +142,6 @@ void	btcExchange(std::ifstream &input, std::ifstream &database_file) {
 	}
 	// for (std::map<std::string, double>::iterator i = database.begin(); i != database.end(); i++)
 	// 	std::cout << "Date = " << i->first << " Value = " << i->second << std::endl;
-	
-	(void)input;
 	while (std::getline(input, buffer))
 	{
 		format = isRightFormat(buffer);

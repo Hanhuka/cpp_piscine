@@ -6,11 +6,13 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:35:01 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/07/19 18:17:44 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/07/31 18:45:22 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
+#include <cstdlib>
+#include <limits>
 
 bool	checkLine(std::string line) {
 	for (int i = 0; line[i]; i++)
@@ -28,7 +30,7 @@ bool	checkLine(std::string line) {
 	return true;
 }
 
-int		performOperation(int fstOperand, int sndOperant, char operatr)
+long	performOperation(long fstOperand, long sndOperant, char operatr)
 {
 	// std::cout << fstOperand << " " << operatr << " " << sndOperant << std::endl;
 	if (operatr == '+')
@@ -46,7 +48,7 @@ void	rpnAlgorithm(std::string line) {
 	int sndOperand;
 	if (!checkLine(line))
 	{
-		std::cout << "Error" << std::endl;
+		std::cerr << "Error" << std::endl;
 		return ;
 	}
 	std::stack<int> stack;
@@ -59,7 +61,7 @@ void	rpnAlgorithm(std::string line) {
 			{
 				if (line[i] == '/' && !stack.top())
 				{
-					std::cout << "Error" << std::endl;
+					std::cerr << "Error" << std::endl;
 					return ;
 				}
 				sndOperand = stack.top();
@@ -67,7 +69,7 @@ void	rpnAlgorithm(std::string line) {
 			}
 			else
 			{
-				std::cout << "Error" << std::endl;
+				std::cerr << "Error" << std::endl;
 				return ;
 			}
 			if (!stack.empty())
@@ -77,17 +79,29 @@ void	rpnAlgorithm(std::string line) {
 			}
 			else
 			{
-				std::cout << "Error" << std::endl;
+				std::cerr << "Error" << std::endl;
 				return ;
 			}
+			if (performOperation(fstOperand, sndOperand, line[i]) > std::numeric_limits<int>::max())
+			{
+				std::cerr << "Error" << std::endl;
+				return ;
+			}
+			// std::cout << "result = " << performOperation(fstOperand, sndOperand, line[i]) << std::endl;
 			stack.push(performOperation(fstOperand, sndOperand, line[i]));
 		}
+		// if (line[i] >= '0' && line[i] <= '9')
+		// 	stack.push(line[i] - '0');
 		if (line[i] >= '0' && line[i] <= '9')
-			stack.push(line[i] - '0');
+			stack.push(std::atoi(line.c_str() + i));
+		// if (line[i] >= '0' && line[i] <= '9')
+		// 	std::cout << "pushing: " << std::atoi(line.c_str() + i) << std::endl;
+		while (line[i] >= '0' && line[i] <= '9')
+			i++;
 	}
 	if (stack.size() != 1)
 	{
-		std::cout << "Error" << std::endl;
+		std::cerr << "Error" << std::endl;
 		return ;
 	}
 	std::cout << stack.top() << std::endl;

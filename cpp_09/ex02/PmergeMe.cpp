@@ -6,13 +6,11 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 16:32:21 by ralves-g          #+#    #+#             */
-/*   Updated: 2023/07/26 17:12:31 by ralves-g         ###   ########.fr       */
+/*   Updated: 2023/07/31 15:14:27 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-
-# define K 5
 
 void	vectorInsertionSort(std::vector<int> &vtr, int start, int end) {
 	for (int i = start; i < end; i++)
@@ -32,7 +30,7 @@ void	vectorSortAndMerge(std::vector<int> &vtr, int start, int end) {
 	std::vector<int> left;
 	std::vector<int> right;
 	std::vector<int>::iterator itr;
-	int middle = (end - start) / 2;
+	int middle = (end + start) / 2;
 	int i;
 	if (end - start > K)
 	{
@@ -69,7 +67,7 @@ void	dequeSortAndMerge(std::deque<int> &dqe, int start, int end) {
 	std::deque<int> left;
 	std::deque<int> right;
 	std::deque<int>::iterator itr;
-	int middle = (end - start) / 2;
+	int middle = (end + start) / 2;
 	int i;
 	if (end - start > K)
 	{
