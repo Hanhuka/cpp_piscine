@@ -16,26 +16,26 @@ Each project has a series of little exercises that makes us put to the test our 
 * Operator overloading
 * Orthodox canonical class form (OCCF)
 
-##CPP03
+## CPP03
 * inheritance
 
-##CPP04
+## CPP04
 * Subtype Polymorphism
 * Abstract Classes
 * Interfaces
 
-##CPP05
+## CPP05
 * Repetition (making code more modular when needed)
 * Exceptions
   
-##CPP06
+## CPP06
 * C++ casts
 
-##CPP07
+## CPP07
 * C++ templates
 
-##CPP08
+## CPP08
 * Standard Template Library (Templated containers, iterators, algorithms)
 
-##CPP09
+## CPP09
 * Still STL but here we learn the strengths and weaknesses of each container in C++98
