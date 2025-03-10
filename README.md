@@ -1,6 +1,6 @@
 # C++ Piscine
 
-## This is a collection of 9 projects all realated to learning C++ each with a new subject to tackle.
+This is a collection of 9 projects all realated to learning C++ each with a new subject to tackle.
 As when we reach the cpp modules there's already a pretty decent foundation in C, we focus more on learning the language specifics.
 Each project has a series of little exercises that makes us put to the test our newly found knowledge
 
